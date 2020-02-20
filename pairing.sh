@@ -1,7 +1,18 @@
 #!/bin/bash
 
-echo "Pair"
+echo "Did you pair this with some team folk?"
 
-read pair
+read -p "You pair alias: " pair
 
-echo "Hola $pair"
+case $pair in
+
+    no)
+        exit 0
+    ;;
+    yes)
+        echo "Hola $pair"
+        exit 0
+    ;;
+esac
+
+exit 1
