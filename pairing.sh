@@ -31,17 +31,17 @@ write_commit_message() {
     printf "\n$message" >> "$COMMIT_MSG_FILE"
 }
 
-echo "Did you pair this with some team folk?"
-
 # Assign STDIN to keyboard input, plain `read` does not stops
 exec < /dev/tty
-read -p "Your pair alias: " pair
 
-case $pair in
-    no)
+read -p "Did you pair this with some team folk? [Y|n]" answer
+
+case $answer in
+    [nN])
         exit 0
     ;;
     *)
+        read -p "Your pair alias: " pair
         res="$(check_pair $pair)"
         write_commit_message "$res"
         exit 0
