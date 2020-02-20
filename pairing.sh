@@ -30,10 +30,8 @@ write_commit_message() {
     @PERL_PATH@ -i.bak -ne 'print $message' "$COMMIT_MSG_FILE"
 }
 
-
 echo "Did you pair this with some team folk?"
 exec < /dev/tty
-
 read -p "Your pair alias: " pair
 
 case $pair in
