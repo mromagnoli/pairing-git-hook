@@ -22,7 +22,6 @@ check_pair() {
 
 write_commit_message() {
     message=$1
-    echo $message
 
     if [ "$message" = "Fail" ]; then
         echo "Not valid pair"
@@ -33,19 +32,18 @@ write_commit_message() {
 }
 
 echo "Did you pair this with some team folk?"
+
+# Assign STDIN to keyboard input, plain `read` does not stops
 exec < /dev/tty
 read -p "Your pair alias: " pair
 
 case $pair in
-
     no)
         exit 0
     ;;
     *)
         res="$(check_pair $pair)"
-        echo $res
         write_commit_message "$res"
-        echo $res
         exit 0
     ;;
 esac
