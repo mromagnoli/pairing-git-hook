@@ -11,7 +11,7 @@ check_pair() {
     while IFS=, read -r user_alias name email
         do
             if [[ "$user_alias" == "$pair_alias" ]]; then
-                result="Co-Authored-By: $name <$email>"
+                result="Co-authored-by: $name <$email>"
                 break 1
                 break 2
             fi
@@ -28,7 +28,7 @@ write_commit_message() {
         exit 1
     fi
 
-    echo "$message" >> "$COMMIT_MSG_FILE"
+    printf "\n$message" >> "$COMMIT_MSG_FILE"
 }
 
 echo "Did you pair this with some team folk?"
