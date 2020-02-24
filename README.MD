@@ -32,4 +32,5 @@ chelo, Marcelo Romagnoli, marce.romagnoli@gmail.com
 
 ```
 
-Then when you try to commit you;
+Then when you try to commit you'll see something like:
+![gif animation](http://g.recordit.co/nQzEuIoT3T.gif)
