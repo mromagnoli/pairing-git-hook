@@ -1,10 +1,10 @@
-#Script to use as Git hook
+# Script to use as Git hook
 
 ## Motivation
 While doing pairing, I believe that it is important to reflect that you were working with someone else and give credit to that person.
 This script is intended to help with this issue by adding the Github convention text **Co-authored-by: ...** just below your commit message.
 
-##Usage
+## Usage
 
 Copy the **pairing.sh** file to your *.git/hooks/* dir or link this file to that directory. It should be named *pre-commit-msg*
 
